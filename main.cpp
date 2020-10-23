@@ -1,81 +1,127 @@
+// C++ program to print all the cycles 
+// in an undirected graph 
 #include <bits/stdc++.h>
 
-#define ll long long
-
 using namespace std;
+const int N = 100000;
 
-void readFile() {
-#ifndef ONLINE_JUDGE
-    freopen("input.txt", "r", stdin);
-    //freopen("output.txt", "w", stdout);
-#else
-    //    freopen("input.txt", "r", stdin);
-//    freopen ("output.txt","w",stdout);
-#endif
-}
+// variables to be used 
+// in both functions 
+vector<int> graph[N];
+vector<int> cycles[N];
 
-const int MOD = 1e9 + 7;
-const int N = 1e5 + 5, M = 2e5 + 5;
-int vis[N], vid;
-string ans[M];
+// Function to mark the vertex with 
+// different colors for different cycles 
+void dfs_cycle(int u, int p, int color[],
+               int mark[], int par[], int &cyclenumber) {
 
-struct graph {
-    int n, to[M], cost[M], ne, head[N], nxt[M];
-
-    void init(int n) {
-        this->n = n;
-        ne = 2;
-        memset(head, -1, (n + 1) * sizeof head[0]);
+    // already (completely) visited vertex.
+    if (color[u] == 2) {
+        return;
     }
 
-    void addEdge(int u, int v, int c) {
-        to[ne] = v;
-        cost[ne] = c;
-        nxt[ne] = head[u];
-        head[u] = ne++;
-    }
+    // seen vertex, but was not completely visited -> cycle detected.
+    // backtrack based on parents to find the complete cycle.
+    if (color[u] == 1) {
 
-    void addBiEdge(int u, int v, int c) {
-        addEdge(u, v, c);
-        addEdge(v, u, c);
-    }
-} adj;
+        cyclenumber++;
+        int cur = p;
+        mark[cur] = cyclenumber;
 
-int edgeFrom[M], edgeTo[M], edgeCost[M], a[1000][1000];
-vector<vector<int> > cycles;
-vector<int> cur;
-
-void generateCycles(int u) {
-    vis[u] = 1;
-    cur.push_back(u);
-    for (int e = adj.head[u]; ~e; e = adj.nxt[e]) {
-        int v = adj.to[e];
-        if (!vis[v]) generateCycles(v);
-        else if (vis[v] == 1) {
-            vector<int> tmp;
-            tmp.push_back(v);
-            for (int i = cur.size() - 1; i >= 0 && cur[i] != v; i--) tmp.push_back(cur[i]);
-            tmp.push_back(v);
-            for(int i = 0; i < tmp.size() - 1; i++){
-
-            }
-            if (tmp.size() > 3) cycles.push_back(tmp);
+        // backtrack the vertex which are
+        // in the current cycle thats found
+        while (cur != u) {
+            cur = par[cur];
+            mark[cur] = cyclenumber;
         }
+        return;
     }
-    cur.pop_back();
-    vis[u] = 2;
+    par[u] = p;
+
+    // partially visited.
+    color[u] = 1;
+
+    // simple dfs on graph
+    for (int v : graph[u]) {
+
+        // if it has not been visited previously
+        if (v == par[u]) {
+            continue;
+        }
+        dfs_cycle(v, u, color, mark, par, cyclenumber);
+    }
+
+    // completely visited.
+    color[u] = 2;
 }
 
-int main() {
-    readFile();
-    int n;
-    cin >> n;
-    adj.init(n);
-    for (int i = 0; i < n * (n - 1) / 2; i++) {
-        cin >> edgeFrom[i] >> edgeTo[i] >> edgeCost[i];
-        adj.addBiEdge(edgeFrom[i], edgeTo[i], edgeCost[i]);
-        a[edgeFrom[i]][edgeTo[i]] = a[edgeTo[i]][edgeFrom[i]] = i;
+// add the edges to the graph 
+void addEdge(int u, int v) {
+    graph[u].push_back(v);
+    graph[v].push_back(u);
+}
+
+// Function to print the cycles 
+void printCycles(int edges, int mark[], int &cyclenumber) {
+
+    // push the edges that into the
+    // cycle adjacency list
+    for (int i = 1; i <= edges; i++) {
+        if (mark[i] != 0)
+            cycles[mark[i]].push_back(i);
     }
-    generateCycles(1);
-    return 0;
+
+    // print all the vertex with same cycle
+    for (int i = 1; i <= cyclenumber; i++) {
+        // Print the i-th cycle
+        cout << "Cycle Number " << i << ": ";
+        for (int x : cycles[i])
+            cout << x << " ";
+        cout << endl;
+    }
+}
+
+// Driver Code 
+int main() {
+
+    // add edges
+    addEdge(1, 2);
+    addEdge(2, 3);
+    addEdge(3, 4);
+    addEdge(4, 6);
+    addEdge(4, 7);
+    addEdge(5, 6);
+    addEdge(3, 5);
+    addEdge(7, 8);
+    addEdge(6, 10);
+    addEdge(5, 9);
+    addEdge(10, 11);
+    addEdge(11, 12);
+    addEdge(11, 13);
+    addEdge(12, 13);
+//    int n;
+//    cin >> n;
+//    for (int i = 0; i < n * (n - 1) / 2; i++) {
+//        int u, v, w;
+//        cin >> u >> v >> w;
+//        addEdge(u, v);
+//    }
+
+    // arrays required to color the
+    // graph, store the parent of node
+    int color[N];
+    int par[N];
+
+    // mark with unique numbers
+    int mark[N];
+
+    // store the numbers of cycle
+    int cyclenumber = 0;
+    int edges = 13;
+
+    // call DFS to mark the cycles
+    dfs_cycle(1, 0, color, mark, par, cyclenumber);
+
+    // function to print the cycles
+    printCycles(edges, mark, cyclenumber);
 } 
