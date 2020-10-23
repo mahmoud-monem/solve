@@ -1,0 +1,57 @@
+struct mStack{
+    stack<pair<int,int>> stk;
+    mStack(){
+        stk.emplace(INT_MIN,INT_MIN);
+    }
+    int size(){
+        return stk.size()-1;
+    }
+    void push(int x){
+        stk.emplace(x,max(x,stk.top().second));
+    }
+    void pop(){
+        stk.pop();
+    }
+    int& top(){
+        return stk.top().first;
+    }
+    int getMax(){
+        return stk.top().second;
+    }
+    bool empty(){
+        return stk.size()==1;
+    }
+};
+struct mQueue{
+    mStack _push,_pop;
+    int size(){
+        return _push.size()+_pop.size();
+    }
+    void push(int x){
+        _push.push(x);
+    }
+    void pop(){
+        if(_pop.empty()){
+            move();
+        }
+        _pop.pop();
+    }
+    int& front(){
+        if(_pop.empty()){
+            move();
+        }
+        return _pop.top();
+    }
+    int getMax(){
+        return max(_push.getMax(),_pop.getMax());
+    }
+    bool empty(){
+        return _push.empty() && _pop.empty();
+    }
+    void move(){
+        while(_push.size()){
+            _pop.push(_push.top());
+            _push.pop();
+        }
+    }
+};

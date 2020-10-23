@@ -1,0 +1,16 @@
+struct DSU {
+    vector<int> par, sz;
+
+    DSU(int n) { par.resize(n), sz.resize(n), iota(all(par), 0), fill(all(sz), 1); }
+
+    int leader(int u) { return (par[u] == u) ? u : par[u] = leader(par[u]); }
+
+    bool join(int u, int v) {
+        int p1 = leader(u), p2 = leader(v);
+        if (p1 == p2)return false;
+        if (sz[p1] < sz[p2])swap(p1, p2);//p2 is bigger
+        par[p2] = p1;
+        sz[p1] += sz[p2];
+        return true;
+    }
+};

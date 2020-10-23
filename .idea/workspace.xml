@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+    <generated>
+      <config projectName="Project" targetName="out" />
+    </generated>
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="f4a56568-1176-4339-b0bb-53c0d7e58043" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CMakeLists.txt" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1cbSIfPT7lP56yh0PV7Hi2Gswv6" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Studying/Graphics/SBE306B_Spring20_Project_Group_04" />
+    <property name="restartRequiresConfirmation" value="false" />
+  </component>
+  <component name="RunManager">
+    <configuration name="out" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Project" TARGET_NAME="out" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Project" RUN_TARGET_NAME="out">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f4a56568-1176-4339-b0bb-53c0d7e58043" name="Default Changelist" comment="" />
+      <created>1590795724224</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1590795724224</updated>
+      <workItem from="1590795732029" duration="418000" />
+      <workItem from="1590808771888" duration="813000" />
+      <workItem from="1590897456209" duration="26000" />
+      <workItem from="1591192009623" duration="57000" />
+      <workItem from="1591771281551" duration="1003000" />
+      <workItem from="1592738028622" duration="1477000" />
+      <workItem from="1592845075119" duration="8799000" />
+      <workItem from="1593178107351" duration="2387000" />
+      <workItem from="1593277495025" duration="3135000" />
+      <workItem from="1593284380856" duration="3921000" />
+      <workItem from="1593351158962" duration="496000" />
+      <workItem from="1593351684794" duration="6181000" />
+      <workItem from="1593603120522" duration="3754000" />
+      <workItem from="1593888236600" duration="12720000" />
+      <workItem from="1593970584439" duration="5860000" />
+      <workItem from="1594048725207" duration="10962000" />
+      <workItem from="1594226481034" duration="3139000" />
+      <workItem from="1594402870186" duration="4382000" />
+      <workItem from="1594579027933" duration="6981000" />
+      <workItem from="1595147252561" duration="5288000" />
+      <workItem from="1595282389227" duration="12598000" />
+      <workItem from="1595643036631" duration="2676000" />
+      <workItem from="1595674276136" duration="4186000" />
+      <workItem from="1596012618447" duration="125000" />
+      <workItem from="1597571472131" duration="9500000" />
+      <workItem from="1599550495242" duration="12036000" />
+      <workItem from="1599606149257" duration="1911000" />
+      <workItem from="1599870846271" duration="5251000" />
+      <workItem from="1600748779786" duration="3743000" />
+      <workItem from="1601021428080" duration="4716000" />
+      <workItem from="1601313568514" duration="5541000" />
+      <workItem from="1601366481920" duration="5217000" />
+      <workItem from="1603452159940" duration="9186000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1323" height="180" key="GridCell.Tab.0.bottom" timestamp="1603464961320">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="180" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1603464961320" />
+    <state width="1323" height="180" key="GridCell.Tab.0.center" timestamp="1603464961319">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="180" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1603464961319" />
+    <state width="1323" height="180" key="GridCell.Tab.0.left" timestamp="1603464961319">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="180" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1603464961319" />
+    <state width="1323" height="180" key="GridCell.Tab.0.right" timestamp="1603464961320">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="180" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1603464961320" />
+    <state width="1323" height="180" key="GridCell.Tab.1.bottom" timestamp="1603464961320">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="180" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1603464961320" />
+    <state width="1323" height="180" key="GridCell.Tab.1.center" timestamp="1603464961320">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="180" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1603464961320" />
+    <state width="1323" height="180" key="GridCell.Tab.1.left" timestamp="1603464961320">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="180" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1603464961320" />
+    <state width="1323" height="180" key="GridCell.Tab.1.right" timestamp="1603464961320">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="180" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1603464961320" />
+    <state x="339" y="162" key="run.anything.popup" timestamp="1597576569776">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1597576569776" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/main.cpp</url>
+          <line>79</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="CMakeRunConfiguration">
+        <watch expression="cycles" language="ObjectiveC" />
+      </configuration>
+    </watches-manager>
+  </component>
+</project>

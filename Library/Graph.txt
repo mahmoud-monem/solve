@@ -1,0 +1,50 @@
+int vis[N], vid;
+string ans[M];
+
+struct graph {
+    int n, to[M], cost[M], ne, head[N], nxt[M];
+
+    void init(int n) {
+        this->n = n;
+        ne = 2;
+        memset(head, -1, n * sizeof head[0]);
+    }
+
+    void addEdge(int u, int v, int c) {
+        to[ne] = v;
+        cost[ne] = c;
+        nxt[ne] = head[u];
+        head[u] = ne++;
+    }
+
+    void addBiEdge(int u, int v, int c) {
+        addEdge(u, v, c);
+        addEdge(v, u, c);
+    }
+
+
+    int isBridge[M], low[N], dfsT[N], timer;
+
+    void getBridges() {
+        timer = 0;
+        vid++;
+        for (int i = 0; i < n; i++) {
+            if (vis[i] != vid)tarjan(i);
+        }
+    }
+
+    void tarjan(int node, int p = -1) {
+        dfsT[node] = low[node] = timer++;
+        vis[node] = vid;
+        for (int e = head[node]; ~e; e = nxt[e]) {
+            int v = to[e];
+            if (e == p)continue;
+            if (vis[v] == vid) low[node] = min(low[node], dfsT[v]);
+            else {
+                tarjan(v, e ^ 1);
+                low[node] = min(low[node], low[v]);
+                if (low[v] > dfsT[node]) isBridge[e] = isBridge[e ^ 1] = 1, ans[cost[e]] = "any";
+            }
+        }
+    }
+};

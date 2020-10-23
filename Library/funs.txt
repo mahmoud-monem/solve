@@ -1,0 +1,62 @@
+
+ll pw(ll b, ll p) {
+    if (!p) re 1;
+    ll sq = pw(b, p / 2);
+    sq *= sq;
+    if (p % 2) sq *= b;
+    re sq;
+}
+
+ll gcd(ll a, ll b) { re (b == 0 ? a : gcd(b, a % b)); }
+
+ll lcm(ll a, ll b) { re ((a * b) / gcd(a, b)); }
+
+ll PowMod(ll bs, ll ex, ll M) {
+    if (!ex)re 1;
+    ll p = PowMod((bs * bs) % M, ex >> 1, M);
+    re (ex & 1) ? (p * bs) % M : p;
+}
+
+ll ModInverse(ll a) { re PowMod(a, MOD - 2, MOD); }
+
+ll ExtGCD(ll a, ll b, ll &x, ll &y) {
+    if (!b) {
+        x = 1;
+        y = 0;
+        re a;
+    }
+    ll r = ExtGCD(b, a % b, y, x);
+    y -= a / b * x;
+    re r;
+}
+
+ll mult(ll a, ll b) { re (1LL * a * b) % MOD; }
+
+bool cmp(double a, double b) { re abs(a - b) < EPS; }
+
+bool isint(double a) { re cmp(a, round(a)); }
+
+bool isPrime(ll n) {
+    if (n == 2)re 1;
+    if (n < 2 || n % 2 == 0)re 0;
+    for (ll i = 3; i * i <= n; i += 2)if (n % i == 0)re 0;
+    re 1;
+}
+
+bool isPalindrome(string str) {
+    ll l = 0;
+    ll h = str.size() - 1;
+    while (h > l) { if (str[l++] != str[h--]) { re 0; }}
+    re 1;
+}
+
+bool isPerfectSquare(ld x) {
+    ld sr = sqrt(x);
+    re ((sr - floor(sr)) == 0);
+}
+
+double EucildDistance(double x, double y, double xx, double yy) { re sqrt((x - xx) * (x - xx) + (y - yy) * (y - yy)); }
+
+
+string alpha = "abcdefghijklmnopqrstuvwxyz";
+const double PI = acos(-1);
